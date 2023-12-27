@@ -8,7 +8,6 @@ The system should be smart enough to walk through variables in an object to find
 # Database storage design
 
 1. An "Objects" table with the following fields:
-
 | Id | parentId | objName | objType |
 | --- | --- | --- | --- |
 
