@@ -1,10 +1,10 @@
-#POAPS - PHP Object Agnostic Persistent Storage
+# POAPS - PHP Object Agnostic Persistent Storage
 
 Any objects created that extend the "POAPS" abstract class, will be saved automatically on save() or __destruct in an object-agnostic database (will start with SQLite through PDO).
 
 The system should be smart enough to walk through variables in an object to find sub objects that must be stored. When recovering the main object, the solution will also recover these sub objects. Hence the process is to work from top to bottom.
 
-#Database storage design
+# Database storage design
 
 1. An "Objects" table with the following fields:
 Id
