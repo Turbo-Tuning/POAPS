@@ -8,8 +8,10 @@ The system should be smart enough to walk through variables in an object to find
 # Database storage design
 
 1. An "Objects" table with the following fields:
+   
 | Id | parentId | objName | objType |
 | --- | --- | --- | --- |
+
 
 (for sub-objects; if it is a top-level object then this field is equal to 0)
 (name given to the object - variable name)
@@ -19,6 +21,8 @@ The system should be smart enough to walk through variables in an object to find
 
 | Id | objId | varType | varName | varData |
 | --- | --- | ---| --- | --- |
+
+
 (type of variable: boolean, integer, string, object, etc)
 (name of the variable)
 (data of the variable)
@@ -42,5 +46,6 @@ b. "Variables" table
 | 3 | 1 | "array" | "offspring" | child => 2 |
 | 4 | 2 | "string" | "name" | "Michelle" |
 | 5 | 2 | "integer" | "age" | 13 |
+
 When reading the first Person object, POAPS will create the object, populate the data and return the object.
 
