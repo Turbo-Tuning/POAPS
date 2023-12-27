@@ -7,11 +7,8 @@ The system should be smart enough to walk through variables in an object to find
 # Database storage design
 
 1. An "Objects" table with the following fields:
-| Id ----
-| parentId (for sub-objects; if it is a top-level object then this field is equal to 0) ----
-| objName (name given to the object - variable name) ----
-| objType (class name) ----
-|
+| Id | parentId (for sub-objects; if it is a top-level object then this field is equal to 0) | objName (name given to the object - variable name) | objType (class name) |
+| --- | --- | --- | --- |
 
 3. A "Variables" table:
 Id
