@@ -3,14 +3,16 @@
 
 Any objects created that extend the "POAPS" abstract class, will be saved automatically on save() or __destruct in an object-agnostic database (will start with SQLite through PDO).
 
-The system should be smart enough to walk through variables in an object to find sub objects that must be stored. When recovering the main object, the solution will also recover these sub objects. Hence the process is to work from top to bottom. 
+The system should be smart enough to walk through variables in an object to find sub objects that must be stored. When recovering the main object, the solution will also recover these sub objects. Hence the process is to work from top to bottom. OTOH, saving objects to storage, will require a bottom-up approach.
+
+Data persistence: in order to prevent duplicates, the original records must be deleted (marked as deleted) after the save().
 
 # Database storage design
 
 1. An "Objects" table with the following fields:
    
-| Id | parentId | objName | objType |
-| --- | --- | --- | --- |
+| Id | parentId | objName | objType | deleted |
+| --- | --- | --- | --- | --- |
 
 
 (for sub-objects; if it is a top-level object then this field is equal to 0)
@@ -19,8 +21,8 @@ The system should be smart enough to walk through variables in an object to find
 
 3. A "Variables" table:
 
-| Id | objId | varType | varName | varData |
-| --- | --- | ---| --- | --- |
+| Id | objId | varType | varName | varData | deleted |
+| --- | --- | ---| --- | --- | --- |
 
 
 (type of variable: boolean, integer, string, object, etc)
