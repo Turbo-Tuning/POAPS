@@ -3,7 +3,7 @@
 
 Any objects created that extend the "POAPS" abstract class, will be saved automatically on save() or __destruct in an object-agnostic database (will start with SQLite through PDO).
 
-The system should be smart enough to walk through variables in an object to find sub objects that must be stored. When recovering the main object, the solution will also recover these sub objects. Hence the process is to work from top to bottom.
+The system should be smart enough to walk through variables in an object to find sub objects that must be stored. When recovering the main object, the solution will also recover these sub objects. Hence the process is to work from top to bottom. OTOH, writing objects to persistent storage will require a bottom-up approach (processing the deepest object and working its way up to the top.
 
 # Database storage design
 
