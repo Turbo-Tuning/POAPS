@@ -1,3 +1,6 @@
+So I wrote the undergoing a while back, preparing a design, thinking things through, etc... Until... I finally got round to writing some code... sigh... And I stumbled over json (yet again). So what was going to be some really smart code is now some very sweet and simple code (KISS principle). Please note it is largely untested and very much WIP, but close to being usable. So ignore what is below and just look at the code.
+
+I have added CRC32 calculations to ensure the data is not tampered with during storage, and will add fast encryption/decryption to make it so.
 
 # POAPS - PHP Object Agnostic Persistent Storage
 
